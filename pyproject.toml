@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "cipherchecks"
+version = "0.1.0"
+description = ""
+authors = ["Joe Thorpe <joe.thorpe@orangecyberdefense.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sslyze = "^4.1.0"
+crayons = "^0.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+flake8 = "^3.9.2"
+pylint = "^2.9.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+cipherchk = "cipherchecks.main:main"
