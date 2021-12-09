@@ -77,3 +77,7 @@ This _tool_ attempts to make the output of the accepted ciphers a little more co
 ```bash
 pip3 install cipherchecks
 ```
+
+## license
+
+`cipherchecks` is licensed under a [GNU General Public v3 License](https://www.gnu.org/licenses/gpl-3.0.en.html). Permissions beyond the scope of this license may be available at [http://sensepost.com/contact/](http://sensepost.com/contact/).
