@@ -116,7 +116,7 @@ def main():
         target = input('[+] target: ')
 
     print('[+] Checking Accepted Cipher Suites for: {}'.format(crayons.green(target)))
-    print('\nDeprechiated protocols are shown in {}\nCBC Ciphers that also do not have PFS are shown in {}\nCBC Ciphers are shown in {}\nCiphers missing PFS are shown in {}'.format(crayons.red('red', bold=True),
+    print('\nDepreciated protocols are shown in {}\nCBC Ciphers that also do not have PFS are shown in {}\nCBC Ciphers are shown in {}\nCiphers missing PFS are shown in {}'.format(crayons.red('red', bold=True),
                                                                                                                                                                                       crayons.magenta('magenta', bold=True),
                                                                                                                                                                                       crayons.yellow('yellow', bold=True),
                                                                                                                                                                                       crayons.blue('blue', bold=True)))
