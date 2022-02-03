@@ -1,4 +1,4 @@
-# chipherchecks
+# cipherchecks
 visually see issues with supported cipher suites
 
 Theres a few known tools out there that will check the cipher suites accepted by a system. This is my attempt in making the output of the results more readable. 
