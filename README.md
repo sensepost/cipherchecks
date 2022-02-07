@@ -70,7 +70,7 @@ TLS 1.3
 
 This _tool_ attempts to make the output of the accepted ciphers a little more copy & paste'able.
 
-[![](https://asciinema.org/a/8SNsmG0G86SYW6jDguB6U8jzP)](http://https://asciinema.org/a/8SNsmG0G86SYW6jDguB6U8jzP)
+[![asciicast](https://asciinema.org/a/467327.svg)](https://asciinema.org/a/467327)
 
 # installation 
 
