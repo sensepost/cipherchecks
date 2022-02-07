@@ -3,7 +3,7 @@ visually see issues with supported cipher suites
 
 Theres a few known tools out there that will check the cipher suites accepted by a system. This is my attempt in making the output of the results more readable. 
 
-For example, using [sslscan](https://github.com/rbsec/sslscan/), to only have a list of supported ciphers, your'll need to grep for 'Accepted'.
+For example, using [sslscan](https://github.com/rbsec/sslscan/), to only have a list of supported ciphers, you will need to grep for 'Accepted'.
 
 ```bash
 $ sslscan github.com | grep Accepted
@@ -28,7 +28,7 @@ Accepted  TLSv1.2  128 bits  AES128-SHA
 Accepted  TLSv1.2  256 bits  AES256-SHA
 ```
 
-[testssl.sh](https://github.com/drwetter/testssl.sh) does way more than just listing the accepted ciphers, however the output of that is skued too.
+[testssl.sh](https://github.com/drwetter/testssl.sh) does way more than just listing the accepted ciphers, however the output of that is skewed too.
 
 ```bash
 $ testssl -E github.com
