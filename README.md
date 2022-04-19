@@ -74,8 +74,24 @@ This _tool_ attempts to make the output of the accepted ciphers a little more co
 
 # installation 
 
+Its highly recommended to use [pipx](https://pypa.github.io/pipx/) as it isolates all the dependencies for you.
+
 ```bash
-pip3 install cipherchecks
+python3 -m pip install pipx
+pipx ensurepath
+pipx install cipherchecks
+```
+
+## installing from source
+
+**You should only install from source if you intend on making changes to the code**
+
+You're going to need to install [poetry](https://python-poetry.org/docs/#installation) as it is used to manage dependencies.
+
+```bash
+git clone https://github.com/sensepost/cipherchecks
+cd cipherchecks
+poetry install
 ```
 
 ## license
