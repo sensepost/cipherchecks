@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cipherchecks"
-version = "0.1.3"
+version = "0.1.4"
 description = ""
 authors = ["Joe Thorpe <joe.thorpe@orangecyberdefense.com>"]
 readme = "README.md"
