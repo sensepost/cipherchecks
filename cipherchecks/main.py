@@ -110,8 +110,11 @@ def parse_results(results):
 
 
 def main():
+    sys.tracebacklimit=0
     try:
         target = sys.argv[1]
+    except KeyboardInterrupt:
+        sys.exit(0)
     except IndexError:
         target = input('[+] target: ')
 
