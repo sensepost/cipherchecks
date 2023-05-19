@@ -96,6 +96,23 @@ cd cipherchecks
 poetry install
 ```
 
+## installing with Docker
+
+This is currently the easiest and most reliable way to install cipherchecks.
+
+1. Install Docker and clone the Cipherchecks repo.
+2. Open up a terminal in the _cipherchecks/Docker_ directory.
+3. Build the Dockerfile:
+```
+docker build -t sensepost/cipherchecks .
+```
+4. Run Cipherchecks with the following command:
+```
+docker run --rm -it sensepost/cipherchecks ./cipherchecks
+```
+
+It's inconvenient to type that whole command each time you want to run Cipherchecks so I'd recommend making a script and adding it to your PATH or just adding an alias in your shell.
+
 ## license
 
 `cipherchecks` is licensed under a [GNU General Public v3 License](https://www.gnu.org/licenses/gpl-3.0.en.html). Permissions beyond the scope of this license may be available at [http://sensepost.com/contact/](http://sensepost.com/contact/).
