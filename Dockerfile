@@ -13,4 +13,4 @@ RUN git clone https://github.com/sensepost/cipherchecks
 
 # Setting up the run script
 WORKDIR /cipherchecks/
-ENTRYPOINT ["python3.8", "cipherchecks/main.py"]
+ENTRYPOINT ["python3.9", "cipherchecks/main.py"]
