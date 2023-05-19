@@ -5,8 +5,8 @@ import sslyze
 import crayons
 
 
-def connect_target(target):
-    server_location = sslyze.ServerNetworkLocationViaDirectConnection.with_ip_address_lookup(target, 443)
+def connect_target(target, port):
+    server_location = sslyze.ServerNetworkLocationViaDirectConnection.with_ip_address_lookup(target, port)
     server_info = sslyze.ServerConnectivityTester().perform(server_location)
     return server_info
 
@@ -113,17 +113,19 @@ def main():
     sys.tracebacklimit=0
     try:
         target = sys.argv[1]
+        port = int(sys.argv[2])
     except KeyboardInterrupt:
         sys.exit(0)
     except IndexError:
         target = input('[+] target: ')
+        port = int(input('[+] port: '))
 
     print('[+] Checking Accepted Cipher Suites for: {}'.format(crayons.green(target)))
     print('\nDepreciated protocols are shown in {}\nCBC Ciphers that also do not have PFS are shown in {}\nCBC Ciphers are shown in {}\nCiphers missing PFS are shown in {}'.format(crayons.red('red', bold=True),
                                                                                                                                                                                       crayons.magenta('magenta', bold=True),
                                                                                                                                                                                       crayons.yellow('yellow', bold=True),
                                                                                                                                                                                       crayons.blue('blue', bold=True)))
-    results = scan_target(connect_target(target))
+    results = scan_target(connect_target(target, port))
     for cipher in parse_results(results):
         print(cipher)
 
