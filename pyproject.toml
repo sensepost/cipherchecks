@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-sslyze = "^4.1.0"
+sslyze = "5.2.0"
 crayons = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
