@@ -1,9 +1,10 @@
-[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
-
 # cipherchecks
+
 visually see issues with supported cipher suites
 
-Theres a few known tools out there that will check the cipher suites accepted by a system. This is my attempt in making the output of the results more readable. 
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+
+Theres a few known tools out there that will check the cipher suites accepted by a system. This is my attempt in making the output of the results more readable.
 
 For example, using [sslscan](https://github.com/rbsec/sslscan/), to only have a list of supported ciphers, you will need to grep for 'Accepted'.
 
@@ -74,19 +75,11 @@ This _tool_ attempts to make the output of the accepted ciphers a little more co
 
 [![asciicast](https://asciinema.org/a/467327.svg)](https://asciinema.org/a/467327)
 
-# installation 
+## installation
 
-Its highly recommended to use [pipx](https://pypa.github.io/pipx/) as it isolates all the dependencies for you.
+There are two options to run cipherchecks. Either by building the docker container, or by running it from source.
 
-```bash
-python3 -m pip install pipx
-pipx ensurepath
-pipx install cipherchecks
-```
-
-## installing from source
-
-**You should only install from source if you intend on making changes to the code**
+### from source
 
 You're going to need to install [poetry](https://python-poetry.org/docs/#installation) as it is used to manage dependencies.
 
@@ -96,18 +89,16 @@ cd cipherchecks
 poetry install
 ```
 
-## installing with Docker
+## using Docker
 
 This is currently the easiest and most reliable way to install cipherchecks.
 
 1. Install Docker and clone the Cipherchecks repo.
 2. Open up a terminal in the cloned repo.
-3. Build the Dockerfile:
-```
-docker build -t sensepost/cipherchecks .
-```
+3. Build the Dockerfile with: `docker build -t sensepost/cipherchecks .`
 4. Run Cipherchecks with the following command:
-```
+
+```bash
 docker run --rm -it sensepost/cipherchecks
 ```
 
