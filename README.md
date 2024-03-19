@@ -1,4 +1,4 @@
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 
 # cipherchecks
 visually see issues with supported cipher suites
@@ -101,7 +101,7 @@ poetry install
 This is currently the easiest and most reliable way to install cipherchecks.
 
 1. Install Docker and clone the Cipherchecks repo.
-2. Open up a terminal in the _cipherchecks_ directory.
+2. Open up a terminal in the cloned repo.
 3. Build the Dockerfile:
 ```
 docker build -t sensepost/cipherchecks .

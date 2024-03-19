@@ -1,16 +1,25 @@
-# Starting with Ubuntu 20.04
-FROM ubuntu:20.04
-ENV DEBIAN_FRONTEND noninteractive
+FROM python:3.11-alpine
 
-RUN apt-get update -qq && apt-get install -y git python3.9 python3.9-dev python3-pip
+# Configure Poetry
+ENV POETRY_VERSION=1.7.0
+ENV POETRY_HOME=/opt/poetry
+ENV POETRY_VENV=/opt/poetry-venv
+ENV POETRY_CACHE_DIR=/opt/.cache
 
-# Installing Cipherchecks dependencies
-RUN python3.9 -m pip install nassl==4.0.0 && \
-  python3.9 -m pip install sslyze==4.1.0 && \
-  python3.9 -m pip install crayons==0.4.0
+# Install poetry separated from system interpreter
+RUN python3 -m venv $POETRY_VENV \
+    && $POETRY_VENV/bin/pip install -U pip setuptools \
+    && $POETRY_VENV/bin/pip install poetry==${POETRY_VERSION}
 
-RUN git clone https://github.com/sensepost/cipherchecks
+# Add `poetry` to PATH
+ENV PATH="${PATH}:${POETRY_VENV}/bin"
 
-# Setting up the run script
-WORKDIR /cipherchecks/
-ENTRYPOINT ["python3.9", "cipherchecks/main.py"]
+WORKDIR /app
+
+# Install dependencies
+COPY poetry.lock pyproject.toml ./
+RUN poetry install
+
+# Run your app
+COPY cipherchecks /app
+CMD [ "poetry", "run", "python", "main.py" ]
